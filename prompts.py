@@ -16,27 +16,27 @@ commented out, the recording is sent once with the API's default cleanup
 """
 
 PROMPTS = [
-    {
-        "title": "Document editing (Granola)",
-        "prompt": """
-            The output will be inserted into existing text, replacing [CARET]:
-            "I think [CARET] we should go". Return only the inserted words so the
-            combined sentence reads correctly: lowercase unless a name, no final
-            punctuation.
-        """,
-    },
-    {
-        "title": "Verbatim",
-        "prompt": """
-            Do not include punctuation. Return exactly what the user said. 
-        """,
-    },
     # {
-    #     "title": "Insert spoken punctuation",
+    #     "title": "Document editing (Granola)",
     #     "prompt": """
-    #         Insert spoken punctuation.
+    #         The output will be inserted into existing text, replacing [CARET]:
+    #         "I think [CARET] we should go". Return only the inserted words so the
+    #         combined sentence reads correctly: lowercase unless a name, no final
+    #         punctuation.
     #     """,
     # },
+    # {
+    #     "title": "Verbatim",
+    #     "prompt": """
+    #         Do not include punctuation. Return exactly what the user said. 
+    #     """,
+    # },
+    {
+        "title": "Insert spoken punctuation",
+        "prompt": """
+            Insert spoken punctuation.
+        """,
+    },
     # {
     #     "title": "Strict spoken punctuation",
     #     "prompt": """

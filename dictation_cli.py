@@ -10,7 +10,7 @@
 """Test harness for the AssemblyAI Dictation API.
 
 Press Enter to start speaking, Enter again to stop. The recording is sent to the
-Dictation API, which returns the verbatim transcript plus an LLM rewrite
+Dictation API, which returns the raw verbatim transcript plus an LLM rewrite
 (`llm_response`). By default we print the rewrite; pass --full to dump the whole
 API response.
 
@@ -154,9 +154,9 @@ def run_prompt(
         print("\n--- full API response ---")
         print(json.dumps(result.dict(), indent=2, ensure_ascii=False, default=str))
     else:
-        print(f"\nverbatim:     {result.text}")
+        print(f"\ntranscript:     {result.text}")
         if result.llm_error:
-            print(f"llm_response: (rewrite failed: {result.llm_error}; falling back to verbatim)")
+            print(f"llm_response: (rewrite failed: {result.llm_error}; falling back to transcript)")
             print(f"              {result.final_text}")
         else:
             print(f"llm_response: {result.llm_response}")
